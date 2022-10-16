@@ -52,6 +52,23 @@ void flip(int r, int c) {
   g[r][c] = 1 - g[r][c];
 }
 
+int bs( vector<int>& arr){
+  int mid;
+  int ll = 0; int rr = arr.size() - 1;
+  while(ll <= rr){
+    int mid = (ll+rr)/2;
+    if(arr[mid] == 1){
+       rr = mid-1;
+    }
+    else{
+      ll= mid+1;
+    }
+  }
+
+  return ll;
+}
+
+
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
